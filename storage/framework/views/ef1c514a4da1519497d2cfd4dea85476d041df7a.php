@@ -16,14 +16,13 @@
         <meta property="og:image" content="">
 
         <!-- Icons -->
-        <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
         <!-- <link rel="shortcut icon" href="assets/media/favicons/favicon.png"> -->
         <!-- <link rel="icon" type="image/png" sizes="192x192" href="assets/media/favicons/favicon-192x192.png"> -->
         <!-- <link rel="apple-touch-icon" sizes="180x180" href="assets/media/favicons/apple-touch-icon-180x180.png"> -->
         <!-- END Icons -->
+        
         <!-- Stylesheets -->
         <link rel="stylesheet" id="css-main" href="velzon/css/oneui.css">
-        <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
         <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/amethyst.min.css"> -->
         <!-- END Stylesheets -->
     </head>
@@ -74,8 +73,5 @@
             </main>
         </div>
         <script src="velzon/js/oneui.app.min.js"></script>
-        <!-- <script src="assets/js/lib/jquery.min.js"></script> -->
-        <!-- <script src="assets/js/plugins/jquery-validation/jquery.validate.min.js"></script> -->
-        <!-- <script src="assets/js/pages/op_auth_signin.min.js"></script> -->
     </body>
 </html>
