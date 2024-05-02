@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+<!--         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="color-line"></div>
@@ -65,14 +65,35 @@
                         <small class="font-bold"></small>
                     </div>
                     <div class="modal-body">
-                        <!-- Begin-modal -->
                         <div id="vdestinos"></div>
                             
-                        <div id="vanexos"></div>                        
-                        <!-- End - modal -->
+                        <div id="vanexos"></div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="modal fade bs-example-modal-lg mdl-show" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title modal-title"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Begin-modal -->
+                        <div class="_destinatarios"></div>
+                            
+                        <div class="_anexos"></div>
+                        <!-- End - modal -->
+                    </div>
+                    <div class="modal-footer">
+                        <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal">
+                            <i class="ri-close-line me-1 align-middle"></i> Cerrar
+                        </a>
                     </div>
                 </div>
             </div>

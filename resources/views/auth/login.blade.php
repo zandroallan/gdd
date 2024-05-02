@@ -1,39 +1,72 @@
-@extends('layouts.login.app')
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Gdd | Consejería</title>
+        <meta name="description" content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+        <meta name="author" content="pixelcave">
+        <meta name="robots" content="noindex, nofollow">
+        <!-- Open Graph Meta -->
+        <meta property="og:title" content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework">
+        <meta property="og:site_name" content="OneUI">
+        <meta property="og:description" content="OneUI - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
 
-@section('content')
-<?php  //echo Hash::make('gespinosa'); ?>
-    <div class="text-center m-b-md">
-        {{ Html::image('img/logo.png', 'Logo',['height' => 100]) }}
+        <!-- Icons -->
+        <!-- <link rel="shortcut icon" href="assets/media/favicons/favicon.png"> -->
+        <!-- <link rel="icon" type="image/png" sizes="192x192" href="assets/media/favicons/favicon-192x192.png"> -->
+        <!-- <link rel="apple-touch-icon" sizes="180x180" href="assets/media/favicons/apple-touch-icon-180x180.png"> -->
+        <!-- END Icons -->
+        
+        <!-- Stylesheets -->
+        <link rel="stylesheet" id="css-main" href="velzon/css/oneui.css">
+        <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/amethyst.min.css"> -->
+        <!-- END Stylesheets -->
+    </head>
+    <body>
+        <div id="page-container">
+            <main id="main-container">
+                <div class="hero-static d-flex align-items-center">
+                    <div class="content">
+                        <div class="row justify-content-center push">
+                            <div class="col-md-8 col-lg-6 col-xl-4">
+                                <div class="block block-rounded mb-0">
+                                    <div class="block-content">
+                                        <div class="p-sm-3 px-lg-4 px-xxl-5 py-lg-5">
+                                            <h1 class="h1 mb-1">Gdd</h1>
+                                            <p class="fw-medium text-muted">Gestión Documental Digital</p>
+                                            <h5>INGRESE SUS DATOS PARA ACCESAR</h5>
 
-        <!-- i class="pe-7s-user fa-5x text-muted"></i -->
-        <h4>INGRESE SUS DATOS PARA ACCESAR</h4>
-        <!-- small>Sistema de Gesti&oacute;n Doumental</small -->                    
-    </div>
-    <div class="hpanel">
-        <div class="panel-body">
-                {!! Form::open(['url' => 'login', 'method' => 'POST', 'id' => 'contact']) !!}
-                    <div class="form-group">
-                        <label class="control-label" for="username">Usuario:</label>
-                        <div class="input-group m-b">
-                            <span class="input-group-addon">
-                                <i class="pe-7s-user"></i>
-                            </span>
-                            {!! Form::text('nickname', old('nickname'),['id'=>'nickname', 'placeholder'=>'Nombre de Usuario', 'required'=>'true', 'class'=>'form-control']) !!}
-                        </div>                       
-                        <span class="help-block small">Nombre de usuario unico del sistema</span>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" for="password">Contraseña:</label>
-                        <div class="input-group m-b">
-                            <span class="input-group-addon">
-                                <i class="pe-7s-lock"></i>
-                            </span>
-                            {!! Form::password('password', ['id'=>'password', 'placeholder'=>'*******', 'required'=>'true', 'class'=>'form-control']) !!}
+                                            {!! Form::open(['url' => 'login', 'method' => 'POST', 'id' => 'contact']) !!}
+                                                <div class="py-3">
+                                                    <div class="mb-4">
+                                                        {!! Form::text('nickname', old('nickname'), ['id'=>'nickname', 'placeholder'=>'Nombre de Usuario', 'required'=>'true', 'class'=>'form-control form-control-alt form-control-lg']) !!}
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        {!! Form::password('password', ['placeholder'=>'Clave de acceso', 'required'=>'true', 'class'=>'form-control form-control-alt form-control-lg']) !!}
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-4">
+                                                    <div class="col-md-6 col-xl-5">
+                                                        {!! Form::button('Iniciar Sesión', ['class' => 'btn w-100 btn-alt-primary', 'type' => 'submit']) !!}
+                                                    </div>
+                                                </div>
+                                            {!! Form::close() !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <span class="help-block small">Contraseña unica del sistema</span>
+                        <div class="fs-sm text-muted text-center">
+                            <strong>CJG 1.0</strong> &copy; <span data-toggle="year-copy"></span>
+                        </div>
                     </div>
-                    {!! Form::button('Iniciar Sesión', ['id'=>'','class' => 'btn btn-primary btn-block', 'type' => 'submit', 'data-uk-tooltip'=>'{pos:bottom}', 'title'=>'Iniciar Sesión']) !!}
-                {!! Form::close() !!}
+                </div>
+            </main>
         </div>
-    </div>
-@endsection
+        <script src="velzon/js/oneui.app.min.js"></script>
+    </body>
+</html>
