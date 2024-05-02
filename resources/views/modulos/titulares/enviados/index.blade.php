@@ -30,11 +30,11 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="card">
-                    <!-- <div class="card-header border-0 align-items-center d-flex">
-                        <h4 class="card-title mb-0 flex-grow-1">Documentación enviada</h4>
-                    </div> -->
-                    <div class="card-body">
-                        <div class="table-responsive _response"></div>
+                    <div class="card-header border-0 align-items-center d-flex">
+                        <!-- <h4 class="card-title mb-0 flex-grow-1">Documentación enviada</h4> -->
+                    </div>
+                    <div class="card-body border border-dashed border-end-0 border-start-0">
+                        <div class="table-responsive table-card _response"></div>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-layout="semibox" data-sidebar-visibility="show" data-topbar="light" data-sidebar="light" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,8 +24,8 @@
         {!! Html::style('template/vendor/jasny-bootstrap/css/jasny-bootstrap.css'); !!}
         @yield('css')
     </head>
-    <body class="fixed-small-header sidebar-scroll fixed-navbar">
-
+    <!-- <body class="fixed-small-header sidebar-scroll fixed-navbar"> -->
+    <body>
         <!-- HEADER -->
         <div id="header">
             <div class="color-line"></div>
