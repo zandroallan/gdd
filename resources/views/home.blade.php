@@ -1,23 +1,28 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+    @section('css')
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+        <link rel="stylesheet" type="text/css" href="{{ asset('velzon/libs/datatables/css/dataTables.bootstrap5.min.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('velzon/libs/datatables/css/buttons.dataTables.min.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('velzon/libs/datatables/css/responsive.bootstrap.min.css') }}" />
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+    @endsection
+
+
+    @section('content')
+        
+       
+
+    @endsection
+
+
+    @section('js')
+
+        <script src="{{ asset('velzon/libs/datatables/js/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('velzon/libs/datatables/js/dataTables.responsive.min.js') }}"></script>
+        <script src="{{ asset('velzon/libs/datatables/js/dataTables.bootstrap5.min.js') }}"></script>
+        <!-- Js Personales -->
+        <script src="{{ asset('js/tools.js') }}"></script>
+        <script src="{{ asset('js/modulos/titulares/borradores.js') }}"></script> 
+
+    @endsection

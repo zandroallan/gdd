@@ -6,60 +6,67 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['auth']], function () { 
 
+	Route::get('home', function() {
+		return view('home');
+	});
+
 	Route::get('anexos/{id}/descarga', ['as'=>'anexos.descarga','uses' =>'AnexosController@descargar']);
+
 	Route::resource('anexos', 'AnexosController',['except' => ['show', 'store', 'create', 'edit']]);
 
 	//Oficialia 
-	Route::group(['prefix' => 'oficialia', 'middleware' => ['role:Oficialia']], function() {	
+	// Route::group(['prefix' => 'oficialia', 'middleware' => ['role:Oficialia']], function() {	
 
-		Route::get('asignacion-directa/{status}/resultados', ['as'=>'oop.asignacion-directa.resultados','uses' =>'Oficialia\AsignacionDirectaController@getResultados']);
+	// 	Route::get('asignacion-directa/{status}/resultados', ['as'=>'oop.asignacion-directa.resultados','uses' =>'Oficialia\AsignacionDirectaController@getResultados']);
 
-		Route::get('conocimiento/{status}/resultados', ['as'=>'oopc.conocimiento.resultados','uses' =>'Oficialia\ConocimientoController@getResultados']);
+	// 	Route::get('conocimiento/{status}/resultados', ['as'=>'oopc.conocimiento.resultados','uses' =>'Oficialia\ConocimientoController@getResultados']);
 
-		Route::resource('asignacion-directa', 'Oficialia\AsignacionDirectaController',['except' => ['show'], 'as'=>'oop']);
+	// 	Route::resource('asignacion-directa', 'Oficialia\AsignacionDirectaController',['except' => ['show'], 'as'=>'oop']);
 
-		Route::resource('borradores', 'Oficialia\BorradoresController',['except' => ['show'], 'as'=>'oop']);
+	// 	Route::resource('borradores', 'Oficialia\BorradoresController',['except' => ['show'], 'as'=>'oop']);
 
-		Route::group(['prefix' => 'asignacion-directa'], function() {
+	// 	Route::group(['prefix' => 'asignacion-directa'], function() {
 
-			Route::resource('enviados', 'Oficialia\AsignacionDirecta\EnviadosController',['except' => ['show', 'store'], 'as'=>'oop']);
+	// 		Route::resource('enviados', 'Oficialia\AsignacionDirecta\EnviadosController',['except' => ['show', 'store'], 'as'=>'oop']);
 
-			Route::resource('acusados', 'Oficialia\AsignacionDirecta\AcusadosController',['except' => ['show', 'store'], 'as'=>'oop']);
-		});
-		Route::group(['prefix' => 'conocimiento'], function() {
+	// 		Route::resource('acusados', 'Oficialia\AsignacionDirecta\AcusadosController',['except' => ['show', 'store'], 'as'=>'oop']);
+	// 	});
+	// 	Route::group(['prefix' => 'conocimiento'], function() {
 
-			Route::resource('enviados', 'Oficialia\Conocimiento\EnviadosController',['except' => ['show', 'store'], 'as'=>'oopc']);
+	// 		Route::resource('enviados', 'Oficialia\Conocimiento\EnviadosController',['except' => ['show', 'store'], 'as'=>'oopc']);
 
-			Route::resource('acusados', 'Oficialia\Conocimiento\AcusadosController',['except' => ['show', 'store'], 'as'=>'oopc']);
-		});
-	});
+	// 		Route::resource('acusados', 'Oficialia\Conocimiento\AcusadosController',['except' => ['show', 'store'], 'as'=>'oopc']);
+	// 	});
+	// });
 
 	//Coordinación 
-	Route::group(['prefix' => 'coordinacion', 'middleware' => ['role:Coordinacion']], function() {
+	// Route::group(['prefix' => 'coordinacion', 'middleware' => ['role:Coordinacion']], function() {
 
-		Route::get('recibidos/{status}/resultados', ['as'=>'coo.recibidos.resultados','uses' =>'Coordinacion\Recibidos\RecibidosController@getResultados']);
-		Route::resource('recibidos', 'Coordinacion\Recibidos\RecibidosController',['except' => ['show'], 'as'=>'coo']);	
+	// 	Route::get('recibidos/{status}/resultados', ['as'=>'coo.recibidos.resultados','uses' =>'Coordinacion\Recibidos\RecibidosController@getResultados']);
+	// 	Route::resource('recibidos', 'Coordinacion\Recibidos\RecibidosController',['except' => ['show'], 'as'=>'coo']);	
 
-		Route::group(['prefix' => 'recibidos'], function() {
+	// 	Route::group(['prefix' => 'recibidos'], function() {
 
-			Route::resource('principal', 'Coordinacion\Recibidos\PrincipalController',['except' => [], 'as'=>'coo']);
+	// 		Route::resource('principal', 'Coordinacion\Recibidos\PrincipalController',['except' => [], 'as'=>'coo']);
 			
-			Route::group(['prefix' => 'principal'], function() {
+	// 		Route::group(['prefix' => 'principal'], function() {
 				
-				Route::get('oficialia/{id}/acusar', ['as'=>'coo.oficialia.acusar','uses' =>'Coordinacion\Recibidos\Principal\OficialiaController@acusar']);
+	// 			Route::get('oficialia/{id}/acusar', ['as'=>'coo.oficialia.acusar','uses' =>'Coordinacion\Recibidos\Principal\OficialiaController@acusar']);
 
-				Route::resource('oficialia', 'Coordinacion\Recibidos\Principal\OficialiaController',['except' => [], 'as'=>'coo']);
-			});
+	// 			Route::resource('oficialia', 'Coordinacion\Recibidos\Principal\OficialiaController',['except' => [], 'as'=>'coo']);
+	// 		});
 
-		});
+	// 	});
 
-	});
+	// });
 
 	/*
 	 * Jue 21 de Noviembre de 2019
 	 * Rutas principales para el ROL Drieccion
 	 */
 	Route::group(['prefix' => 'titular', 'middleware' => ['role:Titular']], function() {
+
+
 
 		Route::get('documento/{id_documentacion_interna}/pdf', ['as'=>'ttl.documento.pdf','uses' =>'Titulares\ReporteController@PDFDocumento']);
 

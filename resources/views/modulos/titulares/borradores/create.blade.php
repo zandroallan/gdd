@@ -61,7 +61,7 @@
                                 <i class="ri-arrow-go-back-line"></i> Atras
                             </a>
 
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 
-    @section('scripts')
+    <?php $__env->startSection('scripts'); ?>
 
         $(".select2-single").select2();       
         $('.datepicker').datepicker({
@@ -8,7 +8,7 @@
             autoclose: true,
         });
 
-    @endsection
+    <?php $__env->stopSection(); ?>
 
 
 
@@ -18,37 +18,44 @@
 
             <div class="col-md-12" id="vfecha_documento">
                 <label class="form-label" for="fecha_documento">Fecha Documento *</label>
-                {!! Form::text('fecha_documento', null, ['id' => 'fecha_documento', 'placeholder'=>'dd/mm/yyyy', 'class' =>  'form-control datepicker']) !!}
+                <?php echo Form::text('fecha_documento', null, ['id' => 'fecha_documento', 'placeholder'=>'dd/mm/yyyy', 'class' =>  'form-control datepicker']); ?>
+
             </div>
 
             <div class="col-md-12" id="vid_tipo_documento">
                 <label class="form-label" for="id_tipo_documento">Tipo de documento *</label>
-                {!! Form::select('id_tipo_documento', $id_tipos_documentos, null, ['id' => 'id_tipo_documento', 'style'=>'width: 100%;', 'class' =>  'form-control select2-single']) !!}
+                <?php echo Form::select('id_tipo_documento', $id_tipos_documentos, null, ['id' => 'id_tipo_documento', 'style'=>'width: 100%;', 'class' =>  'form-control select2-single']); ?>
+
             </div>
 
             <div class="col-md-12" id="vid_dependencia">
                 <label class="form-label" for="id_dependencia">Organismo/Dependencia *</label>
-                {!! Form::select('id_dependencia', $id_dependencia, null, ['id' => 'id_dependencia', 'style'=>'width: 100%;', 'class' =>  'form-control select2-single']) !!}
+                <?php echo Form::select('id_dependencia', $id_dependencia, null, ['id' => 'id_dependencia', 'style'=>'width: 100%;', 'class' =>  'form-control select2-single']); ?>
+
             </div>
 
             <div class="col-md-12" id="vfolio">
                 <label class="form-label" for="folio">Número de folio *</label>
-                {!! Form::text('folio', null, ['id' => 'folio', 'placeholder'=>'Numero de folio del documento', 'class' =>  'form-control']) !!}
+                <?php echo Form::text('folio', null, ['id' => 'folio', 'placeholder'=>'Numero de folio del documento', 'class' =>  'form-control']); ?>
+
             </div>
 
             <div class="col-md-12" id="vdestinatario">
                 <label class="form-label" for="destinatario">Destinatario *</label>
-                {!! Form::text('destinatario', null, ['id' => 'destinatario', 'placeholder'=>'Destinatario documento', 'class' =>  'form-control']) !!}
+                <?php echo Form::text('destinatario', null, ['id' => 'destinatario', 'placeholder'=>'Destinatario documento', 'class' =>  'form-control']); ?>
+
             </div>
 
             <div class="col-md-12" id="vcargo_destinatario">
                 <label class="form-label" for="cargo_destinatario">Cargo Destinatario *</label>
-                {!! Form::text('cargo_destinatario', null, ['id' => 'cargo_destinatario', 'placeholder'=>'Cargo del destinatario', 'class' =>  'form-control']) !!}
+                <?php echo Form::text('cargo_destinatario', null, ['id' => 'cargo_destinatario', 'placeholder'=>'Cargo del destinatario', 'class' =>  'form-control']); ?>
+
             </div>
 
             <div class="col-md-12" id="vasunto">
                 <label class="form-label" for="asunto">Asunto *</label>
-                {!! Form::text('asunto', null, ['id' => 'asunto', 'placeholder'=>'Asunto del documento', 'class' =>  'form-control']) !!}
+                <?php echo Form::text('asunto', null, ['id' => 'asunto', 'placeholder'=>'Asunto del documento', 'class' =>  'form-control']); ?>
+
             </div>
 
         </div>
